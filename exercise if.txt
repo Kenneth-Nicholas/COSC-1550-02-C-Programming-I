@@ -1,0 +1,228 @@
+Part - I: Tracing "if" statements
+Predict the output produced by each code segment shown below.
+
+(1)
+int x = 10;
+
+if (x != 10)
+    cout << "A" << endl;
+else
+    cout << "B" << endl;
+
+(2)
+int x = 0;
+
+if (x = 0)
+    cout << "A" << endl;
+else
+    cout << "B" << endl;
+
+(3)
+int x = -10;
+
+if (x < -1)
+    cout << "A" << endl;
+    cout << "B" << endl;
+
+(4)
+int x = 10,
+    y = 20,
+    z;
+
+if (x >= y)
+    z = x + y;
+else
+    z = y - x;
+cout << z << endl;
+
+(5)
+int x = 10;
+
+if ( x + 1 == 11 )
+    cout << "A" << endl;
+else
+    cout << "B" << endl;
+
+(6)
+int x = 11;
+
+if (x / 2 == 5)
+    cout << "A" << endl;
+else
+    cout << "B" << endl;
+
+(7)
+int x = 12;
+
+if (x > 10)
+{
+    if (x < 15)
+        cout << "A";
+}
+else
+    cout << "B";
+    cout << "C";
+
+(8)
+int x = 3,
+    y = 4;
+
+if (x + y > 10)
+    cout << "A";
+else if (x + y > 5)
+    cout << "B";
+else if (x + y > 0)
+    cout << "C";
+else
+    cout << "D";
+
+In the following 5 questions, assume we have
+int a = 10,
+    b = 15,
+    c = 20;
+
+(9)
+if (b == c)
+{
+    cout << "A";
+}
+else if (a == 10)
+{
+    cout << "B";
+}
+
+(10)
+if (b <= c)
+{
+    cout << "A";
+}
+else if (a == 10)
+{
+    cout << "B";
+}
+
+(11)
+if (b <= c)
+{
+    a = 30;
+    cout << "A";
+}
+else if (a == 30)
+{
+    cout << "B";
+}
+
+(12)
+if (b <= c)
+{
+    a = 30;
+    cout << "A";
+}
+if (a == 30)
+{
+    cout << "B";
+}
+
+(13)
+if (b >= c)
+{
+    cout << "A";
+}
+else if (a == 10)
+{
+    cout << "B";
+    if (a + b > c)
+        cout << "C";
+    else
+        cout << "D";
+        cout << "E";
+}
+
+
+Part - II: Evaluating logical expressions
+Predict whether the following expressions are true or false.
+Hint: The operator precedence is:
+! -(negation)
+* / %
++ -(subtraction)
+> >= < <=
+== !=
+&&
+||
+=
+
+(14) (true && !false)
+
+(15) (true && !false * 0)
+
+(16) (true || true && false)
+
+(17) (3 / 2)
+
+(18) (3.0 / 2.0)
+
+(19) (2 / 3)
+
+(20) (2.0 - 3.0)
+
+In the following 5 questions, assume we have
+int x = 1, 
+    y = 2, 
+    z = 3;
+
+(21) ((x <= y) || (z == 2))
+
+(22) ( y > z || y > x )
+
+(23) ( y < z || x < z && x > y)
+
+(24) ( x == 1 && y == 2 && z == 3)
+
+(25) ( x + y >= z && y > 10 || x * y <= z && x != 0 )
+
+
+Part - III: Comparing non-numeric values
+Predict whether the following expressions are true or false.
+
+(26) ('a' == 'A')
+
+(27) ('a' <= 'b')
+
+(28) ('\n' != '\t')
+
+(29) ("Tom" < "Sam")
+
+(30) ("Tommy" < "Tammy")
+
+(31) ("church" < "churchill")
+
+(32) ("Harry Porter" < "harry")
+
+(33) ("Jerry\n" < "Jerry")
+
+Part - IV: Writing "if" statements
+Write code fragments (not complete programs) to complete the following task.
+Given
+int x,
+    y,
+    z;
+
+(34) If any of x, y and z is positive, display "OK".
+
+(35) If y is the largest of the 3 variables, display "OK".
+     If y is not the largest, but y is still larger than x, display "Not bad".
+     If neither of the above 2 conditions is satisfied, display "Ugh".
+
+(36) If z is the largest of the 3 variables, display the larger value between x and y.
+     If z is not the largest, display the value of z.
+
+(37) If the sum of x and y is less than z, but the product of x and y is larger than z,
+     display "OK".
+     Otherwise, if z is the largest of the 3 variables, display "Z largest"; if z is not the largest,
+     display the larger value between x and y.
+
+(38) If any two of the 3 variables have the same value, 
+     but the value is different from the third variable,
+     display "AAB".
+     Otherwise, display "CCC".
+     (For example, if x is 1, y is 0, z is 1, you should display "AAB".)

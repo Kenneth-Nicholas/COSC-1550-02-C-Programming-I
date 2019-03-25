@@ -1,0 +1,558 @@
+// Practice questions of array and function
+
+// Part I
+// Passing data by value
+//            VS
+// Passing data by reference
+// You can verify your answers by running these programs in Visual Studio.
+
+// (1)
+// Predict the outcome of the following program:
+#include <iostream>
+using namespace std;
+
+double calc_division(double a, double b);
+
+int main()
+{
+    double a = 5.0,
+           b = 2.0,
+           c = 20.0;
+
+    cout << calc_division(9.0, 3.0) << endl;
+    cout << calc_division(9.0 + 6.0, 3.0) << endl;
+    cout << calc_division(c, a) << endl;
+    cout << calc_division(b, a) << endl;
+    cout << calc_division(a * b, c) << endl;
+    cout << calc_division(calc_division(60.0, 4.0), a) << endl;
+
+    return 0;
+}
+
+double calc_division(double a, double b)
+{
+    double c;
+    if (b == 0.0)   // divided by 0 is handled
+        c = 0.0;
+    else
+        c = a / b;
+    return c;
+}
+
+
+// (2)
+// Predict the outcome of the following program:
+#include <iostream>
+using namespace std;
+
+double computeDiff(double a, double b);
+double computeSpecial(double a, double b, double c);
+
+int main()
+{
+    cout << computeSpecial(3.0, 7.0, 5.0) << endl;
+    cout << computeSpecial(2.0, 9.0, 5.0) << endl;
+    cout << computeSpecial(4.0, 7.0, 6.0) << endl;
+    return 0;
+}
+
+double computeDiff(double a, double b)
+{
+    return a - b;
+}
+
+double computeSpecial(double a, double b, double c)
+{
+    return a * computeDiff(b, c);
+}
+
+
+// (3)
+// Predict the outcome of the following program:
+#include <iostream>
+using namespace std;
+
+void changeValues(double & x, double & y, double & z);
+
+int main()
+{
+    double x = 3.0,
+           y = 2.0,
+           z = 4.0;
+
+    changeValues(z, x, y);      // additional question: what will happen if
+                                // we write changeValues(4.0, 3.0, 2.0);
+    cout << x << endl << y << endl << z << endl;
+
+    return 0;
+}
+
+void changeValues(double & x, double & y, double & z)
+{
+    x = -x;
+    y = y * y;
+    z = z * z * z;
+}
+
+
+// (4)
+// Predict the outcome of the following program:
+#include <iostream>
+using namespace std;
+
+void getSquareAndCube(double x, double & x2, double & x3);
+
+int main()
+{
+    double a = 3.0,
+           a2,
+           a3,
+           x,
+           y;
+
+    getSquareAndCube(a, a2, a3);
+    cout << a << "-" << a2 << "-" << a3 << endl;
+
+    getSquareAndCube(a2 - 5.0, x, y);
+    cout << a2 << "-" << x << "-" << y << endl;
+
+    return 0;
+}
+
+void getSquareAndCube(double x, double & x2, double & x3)
+{
+    x2 = x * x;
+    x3 = x * x2;
+    x = 0.0;
+}
+
+// Part II
+// To determine the parameters and returning value of your own functions.
+
+// Questions (5) to (8) are one group.
+// (5)
+// Write a function isSame_1(). The function asks the user to enter 2 characters.
+// The function returns true if these 2 characters are the same. Otherwise,
+// it returns false.
+
+
+// (6)
+// Write a function isSame_2(). The function takes 2 character parameters.
+// The function returns true if these 2 characters are the same. Otherwise,
+// it returns false.
+
+
+// (7)
+// If this is your main function, and you want to tell if the user enters 2 same characters,
+// which function should the main function call? isSame_1() or isSame_2()?
+
+int main()
+{
+    char x,
+         y;
+    bool same;
+
+    cout << "Enter 2 characters, separated by a space:" << endl;
+    cin >> x >> y;
+
+    same = ?     // Which function should the main function call?
+
+    return 0;
+}
+
+
+// (8)
+// If this is your main function, and you want to tell if the user enters 2 same characters,
+// which function should the main function call? isSame_1() or isSame_2()?
+
+int main()
+{
+    bool same;
+
+    same = ?     // Which function should the main function call?
+
+    return 0;
+}
+
+
+// Questions (9) to (12) are one group.
+// (9)
+// Write a program of 2 functions (including main) to compute the value of 
+// x * (x + 1) + y * y + z * (z - 1)
+// where x, y, and z are 3 floating point numbers entered by the user.
+// Requirement: Your main function should NOT have any local variable.
+
+
+// (10)
+// Write a program of 2 functions (including main) to compute the value of 
+// x * (x + 1) + y * y + z * (z - 1)
+// where x, y, and z are 3 floating point numbers entered by the user.
+// Requirements:
+// You should ask the user to enter 3 numbers in the main function.
+// You should not compute the value of the expression in the main function.
+
+
+// (11)
+// Write a program to compute the value of 
+// x * (x + 1) + y * y + z * (z - 1)
+// where x, y, and z are 3 floating point numbers entered by the user.
+// Requirements:
+// You should have a function get3numbers() that asks the user to enter 3 numbers.
+// You should have a function computeExp() that computes the value of the expression.
+// Your main function should call the above 2 functions and get the job done.
+// You must determine the parameters and returning values of all those functions.
+
+
+// (12)
+// Write a program to compute the value of 
+// x * (x + 1) + y * y + z * (z - 1)
+// where x, y, and z are 3 floating point numbers entered by the user.
+// Requirements:
+// You should have a function get3numbers() that asks the user to enter 3 numbers.
+// You should have a function computeExp() that computes the value of the expression.
+// computeExp() should call get3numbers(). The main function should call computeExp().
+// You must determine the parameters and returning values of all those functions.
+
+
+// Part III
+// Processing arrays
+
+// Determine whether the following array definitions are legal.
+// (13)
+int a = 10;
+int a[5];
+
+// (14)
+int a;
+cin >> a;
+int b[a];
+
+// (15)
+int a,
+    b[10];
+
+// (16)
+int char[5];
+
+// (17)
+float num[3.0];
+
+// (18)
+float num[1 + 2];
+
+// (19)
+const int LSIZE = 10,
+          SSIZE = 5;
+float a[LSIZE],
+      b[SSIZE],
+      c[LSIZE + SSIZE];
+
+// (20)
+int a[-5];
+
+
+// Predict the outcome of the following code fragments:
+// Some code fragments may have errors.
+
+// (21)
+char letters[5] = { 'A', 'B', 'C', 'D', 'E' };
+for (int i = 1; i <= 5; i++)
+{
+    cout << letters[i];
+}
+
+// (22)
+char letters[5] = { 'A', 'B', 'C' };
+for (int i = 0; i < 5; i++)
+{
+    cout << letters[i];
+}
+
+// (23)
+char letters[5] = { 'A', 'B', 'C', 'D', 'E', 'F' };
+for (int i = 0; i < 5; i++)
+{
+    cout << letters[i];
+}
+
+// (24)
+int numbers[5] = { 2, 3, 4, 5, 6 };
+for (int i = 1; i < 4; i++)
+{
+    cout << numbers[i];
+}
+
+// (25)
+int numbers[5] = { 2, 3 };
+for (int i = 0; i < 5; i++)
+{
+    cout << numbers[i];
+}
+
+// (26)
+int numbers[5];
+for (int i = 0; i < 5; i++)
+{
+    cout << numbers[i];
+}
+
+// (27)
+int seq1[5] = { 2, 3, 4, 5, 6 },
+    seq2[5] = { 7, 8, 9, 0, 1 };
+
+seq2[5] = seq1[5];
+cout << seq2[5];
+
+// (28)
+int seq1[5] = { 2, 3, 4, 5, 6 },
+    seq2[5] = { 7, 8, 9, 0, 1 };
+
+seq2 = seq1;
+cout << seq2;
+
+// (29)
+int seq1[5] = { 2, 3, 4, 5, 6 },
+    seq2[5] = { 7, 8, 9, 0, 1 };
+
+seq2[3] = seq1[2];
+for (int i = 0; i < 5; i++)
+{
+    cout << seq2[i];
+}
+
+// (30)
+int seq1[5] = { 2, 3, 4, 5, 6 },
+    seq2[5] = { 7, 8, 9, 0, 1 };
+
+for (int i = 0; i < 5; i++)
+{
+    seq2[i] += seq1[i];
+    cout << seq2[i];
+}
+
+// Part IV
+// Trace arrays in the functions
+// Predict the outcome of the following programs:
+
+// (31)
+#include <iostream>
+using namespace std;
+
+void displayArray(const float sequence[], int length);
+void getArray(float sequence[], int length);
+
+int main()
+{
+    const int SIZE = 7;
+    float numbers[SIZE];
+
+    getArray(numbers, SIZE);
+    displayArray(numbers, 3);
+    displayArray(numbers, 5);
+    displayArray(numbers, 7);
+
+    return 0;
+}
+
+void getArray(float sequence[], int length)
+{
+    for (int i = 0; i < length; i++)
+    {
+        cin >> sequence[i];
+    }   // let us assume the user types 7 6 5 4 3 2 1
+}
+
+void displayArray(const float sequence[], int length)
+{
+    for (int i = 0; i < length; i++)
+    {
+        cout << sequence[i] << ' ';
+    }
+    cout << endl;
+}
+
+
+// (32)
+// Fibonacci sequence.
+// If your major is math, go here: https://en.wikipedia.org/wiki/Fibonacci_number
+// Otherwise, read the code below.
+#include <iostream>
+using namespace std;
+
+void displayArray(const float sequence[], int length);
+void getFibonacci(int fsequence[], int length);
+
+int main()
+{
+    const int SIZE = 7;
+    int my_array[SIZE] = { 0, 0, 0, 0, 0, 0, 0 };
+
+    getFibonacci(my_array, 5);
+    displayArray(my_array, 7);
+    getFibonacci(my_array, SIZE);
+    displayArray(my_array, 7);
+
+    return 0;
+}
+
+void getFibonacci(int fsequence[], int length)
+{
+    if (length >= 2)
+    {
+        fsequence[0] = 0;
+        fsequence[1] = 1;
+
+        for (int i = 2; i < length; i++)
+        {
+            fsequence[i] = fsequence[i - 1] + fsequence[i - 2];
+        }
+    }
+}
+
+void displayArray(const float sequence[], int length)
+{
+    for (int i = 0; i < length; i++)
+    {
+        cout << sequence[i] << ' ';
+    }
+    cout << endl;
+}
+
+
+// (33)
+// Summation sequence
+#include <iostream>
+using namespace std;
+
+void displayArray(const float sequence[], int length);
+void getSummation(int input[], int output[], int length);
+
+int main()
+{
+    const int SIZE = 7;
+    int input_array[SIZE] = { 2, 3, 1, 5, 7, 6, 4 },
+        output_array[SIZE];
+
+    getSummation(input_array, output_array, SIZE);
+    displayArray(output_array, SIZE);
+
+    return 0;
+}
+
+void getSummation(int input[], int output[], int length)
+{
+    if (length >= 1)
+    {
+        output[0] = input[0];
+
+        for (int i = 1; i < length; i++)
+        {
+            output[i] = output[i - 1] + input[i];
+        }
+    }
+}
+
+void displayArray(const float sequence[], int length)
+{
+    for (int i = 0; i < length; i++)
+    {
+        cout << sequence[i] << ' ';
+    }
+    cout << endl;
+}
+
+
+// Part V
+// Use functions and arrays to complete the following programs.
+// Requirements:
+// You should use the divide-and-conquer strategy and write multiple functions.
+// You should always use arrays for the data sequences.
+// You should always use const int to define the sizes of your arrays.
+
+// (34)
+// Write a program. The program asks the user to enter 7 numbers and displays
+// the maximum and the miminum of these numbers.
+// For example, if the user enters 2 3 6 5 1 7 4
+// your program should display that the maximum is 7 and the minimum is 1.
+
+
+// (35)
+// Write a program. The program asks the user to enter 7 numbers and displays
+// the sum of the positive numbers among the 7 numbers.
+// For example, if the user enters 1 -2 -3 -4 5 6 7
+// your program should compute 1+5+6+7 and display 19.
+
+
+// (36)
+// Write a program. The program asks the user to enter 5 characters and 
+// convert the digits among the 5 characters to stars.
+// Other characters should remain unchanged.
+// For example, if the user enters 1 2 + A b
+// your program should display **+Ab
+
+
+// (37)
+// Write a program. The program first asks the user to enter 4 numbers to form
+// Sequence 1. Then the program asks the user to enter 8 numbers to form 
+// Sequence 2. Finally the program shall tell which sequence has a larger
+// average. For example, if the user enters 3 4 5 6 for Sequence 1, and 
+// 0 1 2 3 4 5 6 7 for Sequence 2. Your program should know the average of 
+// Sequence 1 is 4.5, and the average of Sequence 2 is 3.5. Therefore your 
+// program should conclude that Sequence 1 has a larger average.
+
+
+// (38)
+// Given this array:
+// int sequence[10] = { 3, 4, 5, 6, 7, 8, 9, 10, 1, 2 };
+// Write a program to ask the user to enter a number, if the number can be 
+// found in the array, your program should display "Found". Otherwise, your
+// program should display "Not found".
+// For example, if the user enters 7, your program should display "Found".
+// If the user enters 11, your program should display "Not found".
+
+
+// Part VI
+// Two dimensional array
+// Predict the outcome of the following programs.
+
+// (39)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    const int WIDTH = 3,
+              HEIGHT = 2;
+    int matrix[HEIGHT][WIDTH] = { { 1, 2, 3},
+                                  { 4, 5, 6} };
+
+    cout << matrix[1][0] << endl;
+    cout << matrix[0][1] << endl;
+
+    return 0;
+}
+
+
+// (40)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    const int WIDTH = 3,
+        HEIGHT = 2;
+    int matrix[HEIGHT][WIDTH] = { { 1, 2, 3 },
+                                  { 4, 5, 6 } },
+        sum = 0;
+
+    for (int y = 0; y < HEIGHT; y++)
+    {
+        for (int x = 0; x < WIDTH; x++)
+        {
+            sum += matrix[y][x];
+        }
+    }
+    cout << sum << endl;
+
+    return 0;
+}

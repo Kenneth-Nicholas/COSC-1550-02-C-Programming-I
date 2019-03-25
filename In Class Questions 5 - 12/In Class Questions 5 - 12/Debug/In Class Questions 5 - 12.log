@@ -1,0 +1,18 @@
+﻿Build started 5/2/2017 1:18:01 PM.
+     1>Project "I:\COSC 1550 02\In Class Questions 5 - 12\In Class Questions 5 - 12\In Class Questions 5 - 12.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "In Class Questions 5 - 12.cpp"
+         In Class Questions 5 - 12.cpp
+     1>i:\cosc 1550 02\in class questions 5 - 12\in class questions 5 - 12\in class questions 5 - 12.cpp(44): error C2371: 'x' : redefinition; different basic types
+                 i:\cosc 1550 02\in class questions 5 - 12\in class questions 5 - 12\in class questions 5 - 12.cpp(38) : see declaration of 'x'
+     1>i:\cosc 1550 02\in class questions 5 - 12\in class questions 5 - 12\in class questions 5 - 12.cpp(45): error C2371: 'y' : redefinition; different basic types
+                 i:\cosc 1550 02\in class questions 5 - 12\in class questions 5 - 12\in class questions 5 - 12.cpp(39) : see declaration of 'y'
+     1>i:\cosc 1550 02\in class questions 5 - 12\in class questions 5 - 12\in class questions 5 - 12.cpp(55): error C2088: '>>' : illegal for class
+     1>i:\cosc 1550 02\in class questions 5 - 12\in class questions 5 - 12\in class questions 5 - 12.cpp(65): error C2088: '>>' : illegal for class
+     1>i:\cosc 1550 02\in class questions 5 - 12\in class questions 5 - 12\in class questions 5 - 12.cpp(148): error C2086: 'float totalComputedValue2' : redefinition
+                 i:\cosc 1550 02\in class questions 5 - 12\in class questions 5 - 12\in class questions 5 - 12.cpp(146) : see declaration of 'totalComputedValue2'
+     1>Done Building Project "I:\COSC 1550 02\In Class Questions 5 - 12\In Class Questions 5 - 12\In Class Questions 5 - 12.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:03.21
